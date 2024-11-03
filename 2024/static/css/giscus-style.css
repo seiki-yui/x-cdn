@@ -1,2 +1,3 @@
-@import url("https://giscus.app/themes/dark_dimmed.css") (prefers-color-scheme: dark);
+@import url("https://gcore.jsdelivr.net/gh/ZexWoo/Giscus/giscus-style.css") (prefers-color-scheme: dark);
+/*@import url("https://giscus.app/themes/dark_dimmed.css") (prefers-color-scheme: dark);*/
 @import url("https://giscus.app/themes/light.css") (prefers-color-scheme: light);
