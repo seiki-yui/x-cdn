@@ -1,0 +1,11 @@
+@import url("https://gcore.jsdelivr.net/gh/seiki-yui/Giscus-DarkMode/Giscus.seiki.css");
+
+main * {
+    font-family: "Noto Sans Display", "Noto Sans SC", "更纱黑体 SC", "思源黑体 SC", system-ui, -apple-system, sans-serif, "Microsoft Yahei", "Segoe UI";
+}
+
+main pre,
+main pre *,
+main .gsc-comment-box-textarea {
+    font-family: "Jetbrains Mono", "Fira Code", Menlo, Monaco, Consolas, "Noto Sans Display", "Noto Sans SC", "更纱黑体 SC", "思源黑体 SC", system-ui, "Courier New", monospace, sans-serif;
+}
