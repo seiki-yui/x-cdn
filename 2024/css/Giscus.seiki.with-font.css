@@ -12,5 +12,9 @@ main * {
 main pre,
 main pre *,
 main .gsc-comment-box-textarea {
+    font-family: "Noto Sans Display", "Noto Sans SC", "更纱黑体 SC", "思源黑体 SC", system-ui, "Courier New", monospace, sans-serif;
+}
+
+main .gsc-is-fixed-width {
     font-family: "Jetbrains Mono", "Fira Code", Menlo, Monaco, Consolas, "Noto Sans Display", "Noto Sans SC", "更纱黑体 SC", "思源黑体 SC", system-ui, "Courier New", monospace, sans-serif;
 }
