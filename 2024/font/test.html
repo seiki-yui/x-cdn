@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@400;500;700&display=swap">
+</head>
+<body>
+    <style>
+        @font-face {
+            font-family: 'ghostpia pixel';
+            font-style: normal;
+            font-weight: 400;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://gcore.jsdelivr.net/gh/seiki-yui/x-cdn/2024/font/ghostpiapixel/0.111/ghostpiapixel-Regular.0.111.woff2) format('woff2'),
+                 url(https://gcore.jsdelivr.net/gh/seiki-yui/x-cdn/2024/font/ghostpiapixel/0.111/ghostpiapixel-Regular.0.111.woff) format('woff'),
+                 url(https://gcore.jsdelivr.net/gh/seiki-yui/x-cdn/2024/font/ghostpiapixel/0.111/ghostpiapixel-Regular.0.111.ttf) format('truetype');
+            
+        }
+        .grid {
+            white-space: break-spaces;
+        }
+        .content#pixel {
+            font-family: "ghostpia pixel";
+            font-size: 150%;
+        }
+        .content#notpixel {
+            font-family: "Jetbrains Mono";
+            font-weight: 300;
+            font-size: 125%;
+            line-height: 1.8;
+        }
+
+    </style>
+    <main class="container">
+        <article>
+            <div class="grid">
+                <textarea class="content" id="pixel" rows="10">ABCDEFGHIJKLMNOPQRSTUVWXYZ はばぱ 
+0123456789 *+-/:;<=>?@[\]^_`´{|}~ 
+ghostpia pixel by xiao_zheng (seiki yui)
+
+The quick brown fox jumps over the lazy dog.</textarea>
+                <textarea class="content" id="notpixel" rows="10">ABCDEFGHIJKLMNOPQRSTUVWXYZ はばぱ 
+0123456789 *+-/:;<=>?@[\]^_`´{|}~ 
+ghostpia pixel by xiao_zheng (seiki yui)
+
+The quick brown fox jumps over the lazy dog.</textarea>
+            </div>
+            <script>
+                let pixel = document.getElementById("pixel")
+                let edit = document.getElementById("notpixel")
+                edit.addEventListener('change', (event) => {
+                    pixel.innerHTML = edit.innerHTML
+                });
+            </script>
+        </article>
+    </main>
+</body>
+</html>
