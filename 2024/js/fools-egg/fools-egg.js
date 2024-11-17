@@ -9,7 +9,7 @@
         right = Math.floor(50 * Math.random()),
         rotate = Math.floor(360 * Math.random());
     var foolsEgg = document.createElement("img");
-    foolsEgg.src = "./foolsEgg.png";
+    foolsEgg.src = "https://gcore.jsdelivr.net/gh/seiki-yui/x-cdn/2024/js/fools-egg/fools-egg.png";
     foolsEgg.style.position = "fixed"; 
     foolsEgg.style.bottom = "".concat(bottom, "%");
     foolsEgg.style.right = "".concat(right, "%"); 
