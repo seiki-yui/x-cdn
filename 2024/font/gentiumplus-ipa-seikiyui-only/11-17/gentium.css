@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Gentium Plus';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: local('Gentium Plus'), 
+         url('https://gcore.jsdelivr.net/gh/seiki-yui/x-cdn/2024/font/gentiumplus-ipa-seikiyui-only/11-17/gentium.woff2') format('woff2'), 
+         url('https://gcore.jsdelivr.net/gh/seiki-yui/x-cdn/2024/font/gentiumplus-ipa-seikiyui-only/11-17/gentium.woff') format('woff');
+}
