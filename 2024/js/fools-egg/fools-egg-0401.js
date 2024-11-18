@@ -7,7 +7,7 @@
 
     var isFoolsDay = ((month == 4) && (day == 1));
 
-    console.log(isLightMode, isFoolsDay)
+    // console.log(isLightMode, isFoolsDay)
 
     if (!isLightMode) return 0;
     if (!isFoolsDay) return 0;
