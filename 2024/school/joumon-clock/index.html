@@ -4,28 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..800;1,100..800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:ital,wght@0,100..800;1,100..800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap">
 </head>
 <body>
     <style>
         html, body {
             background-color: #00000000;
             color: white;
+            margin: 0;
+            /* padding: 0; */
         }
         h1 {
-            font-size: 99px;
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            top: calc(50%);
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-            font-family: 'Jetbrains Mono';
-            font-weight: 700;
             text-shadow: 
                 1px 1px 0 black, 
                 -1px -1px 0 black,
                 1px -1px 0 black,
                 -1px 1px 0 black;
+            font-size: 61px;
+            font-family: 'Noto Sans SC';
+            font-weight: 600;
+        }
+        h1#time {
+            top: calc(50% - 74px);
+            font-size: 200px;
+            font-family: 'Jetbrains Mono';
+            font-weight: 700;
+        }
+        h1#date {
+            top: calc(50% + 94px);
+            font-size: 61px;
+        }
+        h1#test {
+            top: 90px;
+            font-size: 65px;
         }
     </style>
-    <h1>Hello, World!</h1>
-    <h1>11:45:14</h1>
-    <h1>测试1111<img src="https://gcore.jsdelivr.net/gh/seiki-yui/x-cdn/2024/school/joumon-clock/1.gif" alt=""></h1>
-    
+    <h1 id="time">11:45:14</h1>
+    <h1 id="date">2024.12.18 星期三</h1>
+    <h1 id="test">距离会考还有 17 天</h1>
+
+    <script>
+        let ele_time = document.getElementById("time")
+        function step() {
+
+            let time = new Date();
+
+            let hours = time.getHours() % 12
+            if (hours == 0) { hours = 12 }
+            hours = ("00" + hours).slice(-2)
+            // let hours = ("00" + time.getHours()).slice(-2);
+            let minutes = ("00" + time.getMinutes()).slice(-2);
+            let seconds = ("00" + time.getSeconds()).slice(-2);
+
+            value = hours + ":" + minutes + ":" + seconds;
+
+            ele_time.innerHTML = value
+
+            window.requestAnimationFrame(step)
+        }
+        window.requestAnimationFrame(step)
+        	
+    </script>
+    <!-- <img src="https://gcore.jsdelivr.net/gh/seiki-yui/x-cdn/2024/school/joumon-clock/1.gif" alt=""> -->
 </body>
 </html>
