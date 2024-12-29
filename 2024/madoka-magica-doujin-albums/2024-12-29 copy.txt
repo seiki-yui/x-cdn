@@ -1,0 +1,19 @@
+album artist
+album
+date
+
+title
+artist
+
+
+
+track number
+genre
+performer
+band
+
+composer
+disc number
+total discs
+total tracks
+cover

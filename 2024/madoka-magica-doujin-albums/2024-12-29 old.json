@@ -1,0 +1,63 @@
+[
+    {
+        "album": {
+            "name": "Lux Aeterna～魔法少女たちに捧ぐ",
+            "artist": "Holzmond Records",
+            "date": "2011-12-31",
+            "cover": "https://gcore.jsdelivr.net/gh/seiki-yui/x-cdn/2024/madoka-magica-doujin-albums/covers-600px-png/%5B111231%5D%5BHolzmond%20Records%5D%20Lux%20Aeterna%EF%BD%9E%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E3%81%9F%E3%81%A1%E3%81%AB%E6%8D%A7%E3%81%90.png"
+        },
+        "song": [
+            {
+                "title": "Lux Aeterna - Introitus"
+            },
+            {
+                "title": "Magia"
+            },
+            {
+                "title": "魔法少女の宿命"
+            },
+            {
+                "title": "運命の鼓動"
+            },
+            {
+                "title": "Fuga \"Credens Justitiam\""
+            },
+            {
+                "title": "Sanctus \"Credens Justitiam\""
+            },
+            {
+                "title": "Conturbatio - Greensleeves - Decretum"
+            },
+            {
+                "title": "Recordare - Terror adhaerens"
+            },
+            {
+                "title": "Stelle*Cadenti"
+            },
+            {
+                "title": "Symposium magarum"
+            },
+            {
+                "title": "Ave Maria (BWV846 Preludium)"
+            },
+            {
+                "title": "Laudamus te (BWV846 Fuga)"
+            },
+            {
+                "title": "Inevitabilis -Bells Mix-"
+            },
+            {
+                "title": "Surgam identidem (Symphonic Metal Ver.)"
+            },
+            {
+                "title": "Agnus Dei \"Sagitta Luminis\""
+            },
+            {
+                "title": "コネクト"
+            },
+            {
+                "title": "Lux Aeterna - Pro omnibus puellis magicis"
+            }
+        ]
+    }
+]
