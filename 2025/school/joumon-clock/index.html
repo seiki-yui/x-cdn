@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script src="https://gcore.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..800;1,100..800&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:ital,wght@0,100..800;1,100..800&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap">
+</head>
+
+<body>
+    <style>
+        html,
+        body {
+            background-color: #00000000;
+            background-position: center;
+            background-image: url('http://127.0.0.1:9961/file?path=C:/Users/Administrator/AppData/Roaming/Microsoft/Windows/Themes/CachedFiles/CachedImage_1920_1080_POS4.jpg');
+            color: white;
+            margin: 0;
+            height: 100%;
+            /* padding: 0; */
+        }
+
+        h1 {
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            top: calc(50%);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            text-shadow:
+                1px 1px 0 rgba(0, 0, 0, 0.1),
+                -1px -1px 0 rgba(0, 0, 0, 0.1),
+                1px -1px 0 rgba(0, 0, 0, 0.1),
+                -1px 1px 0 rgba(0, 0, 0, 0.1);
+            font-size: 61px;
+            font-family: 'Noto Sans SC';
+            font-weight: 600;
+        }
+
+        h1#time {
+            top: calc(50% - 74px);
+            font-size: 200px;
+            font-family: 'Jetbrains Mono';
+            font-weight: 700;
+        }
+
+        h1#date {
+            top: calc(50% + 94px);
+            font-size: 61px;
+        }
+
+        h1.countdown {
+            font-size: 54px;
+            width: 1300px;
+        }
+
+        h1#countdown1 {
+            top: 90px;
+        }
+
+        h1#countdown2 {
+            top: 160px;
+        }
+
+        h1#countdown3 {
+            top: 230px;
+        }
+
+        h1#countdown4 {
+            top: 300px;
+        }
+
+        h1#countdown1 {
+            top: 90px;
+        }
+
+        h1.subject {
+            font-size: 35px;
+            left: 190px;
+            transform: translate(0, -50%);
+        }
+
+        h1#subject1 {
+            top: 78px;
+        }
+
+        h1#subject2 {
+            top: 138px;
+        }
+
+        h1#subject3 {
+            top: 198px;
+        }
+
+        h1#subject4 {
+            top: 258px;
+        }
+
+        h1#subject5 {
+            top: 318px;
+        }
+    </style>
+
+
+
+    <h1 id="time">烫:烫:烫</h1>
+    <h1 id="date">锟斤拷锟斤拷</h1>
+    <h1 id="countdown1" class="countdown">屯屯屯 葺葺葺</h1>
+    <h1 id="countdown2" class="countdown"></h1>
+    <h1 id="countdown3" class="countdown"></h1>
+    <h1 id="countdown4" class="countdown"></h1>
+
+    <h1 id="subject1" class="subject"></h1>
+    <h1 id="subject2" class="subject"></h1>
+    <h1 id="subject3" class="subject"></h1>
+    <h1 id="subject4" class="subject"></h1>
+    <h1 id="subject5" class="subject"></h1>
+
+    <script>
+        let ele_time = document.getElementById("time")
+
+
+
+        function 时间(time) {
+            let hours = time.getHours() % 12
+            if (hours == 0) { hours = 12 }
+
+            hours = ("00" + hours).slice(-2)
+            // let hours = ("00" + time.getHours()).slice(-2);
+            let minutes = ("00" + time.getMinutes()).slice(-2);
+            let seconds = ("00" + time.getSeconds()).slice(-2);
+
+            return `${hours}:${minutes}:${seconds}`;
+        }
+
+        function 日期(time) {
+
+            let year = time.getFullYear();
+            let month = ("00" + (time.getMonth() + 1)).slice(-2);
+            let date = ("00" + time.getDate()).slice(-2);
+
+            let days = "星期" + new Array("日", "一", "二", "三", "四", "五", "六")
+            [time.getDay()]
+
+            value = year + "." + month + "." + date + " " + days;
+
+            return value;
+        }
+
+        function 倒数日(time, 目标日, 目标) {
+            function between(a, b) {
+                return (b - a - 8 * 60 * 60 * 1000) / (1 * 24 * 60 * 60 * 1000) + 1
+            }
+
+            let delta = Math.floor(between(time, Date.parse(目标日)))
+
+            value = `距离${目标}还有 ${delta.toString()} 天`
+
+            if (delta == 1) value = `${目标}就是明天`
+            if (delta == 0) value = `${目标}就是今天`
+            if (delta < 0) value = ""
+
+            return value;
+        }
+
+        function 学科(现在时间, 开始, 结束, 科目) {
+
+            // 获取时间对象
+            let 开始时间 = new Date(现在时间.toLocaleDateString() + " " + 开始)
+            let 结束时间 = new Date(现在时间.toLocaleDateString() + " " + 结束)
+
+            // if (现在时间.getHours() > 12) {
+            //     开始 = (开始时间.getHours() - 12) + ":" + ("00" + 开始时间.getMinutes()).slice(-2)
+            //     结束 = (结束时间.getHours() - 12) + ":" + ("00" + 结束时间.getMinutes()).slice(-2)
+            // }
+
+            function 相差分钟数(开始毫秒刻, 结束毫秒刻) {
+                return (结束毫秒刻 - 开始毫秒刻) / (1000 * 60)
+            }
+            function 小时分钟(相差) {
+                let 结果 = ""
+
+                if (相差 < 0) {
+                    结果 = "已经过去";
+                    相差 = -相差
+                }
+
+                if (相差 > 60) {
+                    结果 += Math.floor(相差 / 60) + "小时"
+                }
+                结果 += Math.floor(相差 % 60) + "分钟"
+
+                return 结果;
+            }
+
+            let 剩余时间 = ""
+            let 相差 = 相差分钟数(现在时间, 结束时间)
+
+            if (开始时间.getTime() <= 现在时间.getTime() && 现在时间.getTime() <= 结束时间.getTime()) {
+                剩余时间 = "还剩" + 小时分钟(相差)
+            }
+
+            return `${开始}~${结束} ${科目} ${剩余时间}`
+        }
+
+
+        // $("#countdown1").hide()
+        // $("#countdown2").hide()
+        $("#countdown3").hide()
+        $("#countdown4").hide()
+
+        // $("#subject1").hide()
+        // $("#subject2").hide()
+        // $("#subject3").hide()
+        // $("#subject4").hide()
+        $("#subject5").hide()
+
+
+        function step() {
+
+            let time = new Date("2025-07-26 19:47:01");
+            // time = new Date();
+
+            // ################################ 时间 ################################ 
+
+            $("#time").text(时间(time))
+            $("#date").text(日期(time))
+            // $("#countdown1").text(
+            //     倒数日(time,[
+            //         ["2025-08-27","一检"],
+            //         ["2025-08-27","一检"],
+            //         ["2025-08-27","一检"],
+            //         ["2025-08-27","一检"],
+            //     ])
+            // )
+            $("#countdown1").text(倒数日(time, "2026-06-07", "高考"))
+            $("#countdown2").text(倒数日(time, "2025-08-27", "一检"))
+            // $("#countdown2").text(倒数日(time,"2025-08-27","一检"))
+            // $("#countdown3").text(倒数日(time,"2025-08-27","一检"))
+            // $("#countdown4").text(倒数日(time,"2025-08-27","一检"))
+
+            $("#subject1").text(学科(time, "18:20", "19:00", "数学"))
+            $("#subject2").text(学科(time, "19:00", "19:40", "物理"))
+            $("#subject3").text(学科(time, "19:40", "20:20", "化学"))
+            $("#subject4").text(学科(time, "20:20", "21:00", "地生"))
+            $("#subject5").text(学科(time, "0:00", "0:00", "学科"))
+
+            setTimeout(() => window.requestAnimationFrame(step), 500)
+
+        }
+        window.requestAnimationFrame(step)
+
+
+
+    </script>
+    <!-- <img src="https://gcore.jsdelivr.net/gh/seiki-yui/x-cdn/2024/school/joumon-clock/1.gif" alt=""> -->
+</body>
+
+</html>
